@@ -59,7 +59,8 @@ extra_css: "starter-template.css"
     <h1><br>Enter Resume or Coverletter</h1>
     <p class="lead">Copy and Paste your paragraphs into the text box below and select submit once you're done. <br></p>
       <form action = "editedPage.html">
-        <textarea name= "text" rows = "10" cols = "30">
+		
+        <textarea name= "text" rows = "10" cols = "30" id = "text">
         </textarea>
         <br>
         <form radioButton = "">
@@ -70,7 +71,7 @@ extra_css: "starter-template.css"
           <input type = "radio" name = "choice" value = "Grammar">
           Grammar<br>
         </form>
-        <button onclick="WriteToFile()"; href = "editedPage.html" >Submit</button>
+        <button onclick="location.href='editedPage.html'" >Submit</button>
       </form>
   </div>
 
@@ -81,7 +82,7 @@ extra_css: "starter-template.css"
 function WriteToFile(passForm) {
   var fso = new ActiveXObject("Scripting.FileSystemObject");
   var text=document.getElementById("text").innerText;
-  var s = fso.CreateTextFile("C:\\paragraph.txt", true);
+  var s = fso.CreateTextFile("paragraph.txt", true);
   s.WriteLine(text);
   s.WriteLine('***********************');
   s.Close();
