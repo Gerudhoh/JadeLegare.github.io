@@ -70,8 +70,21 @@ extra_css: "starter-template.css"
           <input type = "radio" name = "choice" value = "Grammar">
           Grammar<br>
         </form>
-        <input type = "submit paragraph">
+        <button onclick="WriteToFile()"; href = "editedPage.html" >Submit</button>
       </form>
   </div>
 
 </main><!-- /.container -->
+
+
+<script type ="text/javascript">
+function WriteToFile(passForm) {
+  var fso = new ActiveXObject("Scripting.FileSystemObject");
+  var text=document.getElementById("text").innerText;
+  var s = fso.CreateTextFile("paragraph.txt", true);
+  s.WriteLine(text);
+  s.WriteLine('***********************');
+  s.Close();
+}
+  </script>
+
